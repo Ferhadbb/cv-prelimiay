@@ -7,6 +7,553 @@
   <meta name="keywords" content="Farhad Burjaliev, CV, curriculum vitae, backend developer, computer science, Python, FastAPI, PostgreSQL, MySQL, C programming">
   <meta name="author" content="Farhad Burjaliev">
   <title>Farhad Burjaliev - CV</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400;1,700&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Fira+Code:wght@400;500&display=swap');
+
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --accent-color: #e74c3c;
+  --text-color: #333;
+  --light-gray: #ecf0f1;
+  --border-color: #bdc3c7;
+  --success-color: #27ae60;
+}
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-color);
+  font-weight: 400;
+}
+
+h1 {
+  font-family: 'Merriweather', Georgia, serif;
+  font-size: 2.5em;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  margin: 0.5em 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-family: 'Merriweather', Georgia, serif;
+  font-size: 1.8em;
+  font-weight: 700;
+  color: var(--secondary-color);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 1em 0 0.5em 0;
+  border-bottom: 3px solid var(--secondary-color);
+  padding-bottom: 0.3em;
+}
+
+h3 {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 1.4em;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0.8em 0 0.4em 0;
+}
+
+h4 {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 1.2em;
+  font-weight: 500;
+  color: var(--text-color);
+  margin: 0.6em 0 0.4em 0;
+  font-style: italic;
+}
+
+p {
+  margin: 0.8em 0;
+  text-align: justify;
+  text-indent: 1em;
+}
+
+h1 + p,
+h2 + p,
+h3 + p {
+  text-indent: 0;
+}
+
+p strong {
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+p em,
+em {
+  font-style: italic;
+  color: #555;
+}
+
+p strong i {
+  color: var(--secondary-color);
+}
+
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  border-bottom: 1px dotted var(--secondary-color);
+}
+
+a:hover {
+  color: var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
+}
+
+a:active {
+  color: var(--success-color);
+}
+
+a:visited {
+  color: #8e44ad;
+}
+
+a:focus {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+a[href^="http"]::after {
+  content: " ↗";
+  font-size: 0.8em;
+  color: var(--secondary-color);
+}
+
+a[href^="mailto:"] {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.95em;
+}
+
+a[href^="mailto:"]::before {
+  content: "✉ ";
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+a[href^="tel:"] {
+  font-family: 'Fira Code', monospace;
+  font-weight: 400;
+}
+
+a[href^="tel:"]::before {
+  content: "📞 ";
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+ul {
+  list-style-type: square;
+  margin: 1em 0;
+  padding-left: 2em;
+}
+
+ol {
+  list-style-type: decimal;
+  margin: 1em 0;
+  padding-left: 2em;
+}
+
+li {
+  margin: 0.5em 0;
+  line-height: 1.8;
+}
+
+ul ul,
+ol ul {
+  list-style-type: circle;
+  margin: 0.3em 0;
+}
+
+ul ol,
+ol ol {
+  list-style-type: lower-alpha;
+  margin: 0.3em 0;
+}
+
+li:first-child {
+  font-weight: 500;
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
+
+li:nth-child(odd) {
+  background-color: rgba(236, 240, 241, 0.3);
+  padding: 0.2em 0.5em;
+  margin-left: -0.5em;
+}
+
+li strong {
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+dl {
+  margin: 1em 0;
+}
+
+dt {
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-top: 0.8em;
+  font-size: 1.1em;
+}
+
+dt::after {
+  content: ":";
+  color: var(--secondary-color);
+}
+
+dd {
+  margin-left: 2em;
+  margin-bottom: 0.5em;
+  font-style: italic;
+  color: #555;
+  border-left: 3px solid var(--light-gray);
+  padding-left: 1em;
+}
+
+dt + dd {
+  margin-top: 0.3em;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  width: 100%;
+  font-size: 0.95em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+caption {
+  font-size: 1.2em;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.8em;
+  text-align: left;
+  font-style: italic;
+  letter-spacing: 0.5px;
+}
+
+thead {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+thead th {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9em;
+}
+
+th {
+  padding: 1em;
+  text-align: left;
+  font-weight: 700;
+  border: 1px solid var(--border-color);
+  background-color: var(--light-gray);
+  color: var(--primary-color);
+}
+
+td {
+  padding: 0.8em 1em;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:nth-child(even) {
+  background-color: white;
+}
+
+tbody tr:hover {
+  background-color: #e3f2fd;
+  cursor: pointer;
+}
+
+tbody td:first-child,
+tbody th:first-child {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+tfoot {
+  background-color: var(--light-gray);
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+tfoot td {
+  padding: 0.8em;
+  text-align: center;
+  font-weight: 500;
+  border-top: 2px solid var(--primary-color);
+}
+
+address {
+  font-style: normal;
+  line-height: 2;
+  margin: 1em 0;
+  padding: 1em;
+  background-color: var(--light-gray);
+  border-left: 4px solid var(--secondary-color);
+}
+
+address strong {
+  font-weight: 700;
+  color: var(--primary-color);
+  min-width: 120px;
+  display: inline-block;
+}
+
+abbr {
+  text-decoration: none;
+  border-bottom: 2px dotted var(--secondary-color);
+  cursor: help;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+abbr[title]:hover {
+  border-bottom-style: solid;
+  color: var(--accent-color);
+}
+
+time {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.95em;
+  color: #555;
+  font-weight: 500;
+  background-color: rgba(52, 152, 219, 0.1);
+  padding: 0.1em 0.4em;
+  border-radius: 3px;
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, var(--secondary-color), var(--accent-color), var(--secondary-color));
+  margin: 2em 0;
+  opacity: 0.7;
+}
+
+img {
+  border: 4px solid var(--secondary-color);
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: block;
+  margin: 1em auto;
+}
+
+img:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  border-color: var(--accent-color);
+}
+
+h2 + p::first-letter {
+  font-size: 2em;
+  font-weight: 700;
+  color: var(--accent-color);
+  line-height: 1;
+  float: left;
+  margin-right: 0.1em;
+}
+
+h2 + p::first-line {
+  font-weight: 500;
+  font-variant: small-caps;
+  letter-spacing: 1px;
+}
+
+::selection {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+::-moz-selection {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+p:empty {
+  display: none;
+}
+
+li:not(:last-child) {
+  border-bottom: 1px solid transparent;
+}
+
+:target {
+  background-color: #fff3cd;
+  border-left: 4px solid #ffc107;
+  padding-left: 1em;
+}
+
+[title] {
+  cursor: help;
+}
+
+a[target="_blank"] {
+  font-weight: 600;
+}
+
+th[colspan] {
+  text-align: center;
+  background-color: var(--primary-color);
+  color: white;
+}
+
+td[colspan] {
+  text-align: center;
+  font-style: italic;
+}
+
+body > h1 {
+  margin-top: 0;
+}
+
+body > p:first-of-type {
+  text-align: center;
+  font-size: 1.2em;
+  text-indent: 0;
+}
+
+ul > li,
+ol > li {
+  color: var(--text-color);
+}
+
+thead > tr > th {
+  color: white;
+}
+
+h3 + p {
+  margin-top: 0.3em;
+  font-weight: 500;
+}
+
+h2 ~ p {
+  color: var(--text-color);
+}
+
+h3 + ul,
+h4 + ol {
+  margin-top: 0.5em;
+}
+
+strong {
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+em {
+  font-style: italic;
+  color: #555;
+}
+
+abbr,
+time {
+  font-family: 'Fira Code', monospace;
+}
+
+*:focus-visible {
+  outline: 3px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+td:nth-child(2) {
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+td:nth-child(4) {
+  text-align: center;
+  font-weight: 600;
+  color: var(--success-color);
+}
+
+td:nth-child(3) {
+  font-style: italic;
+  font-weight: 500;
+}
+
+h2::first-letter {
+  font-size: 1.2em;
+  margin-right: 0.2em;
+}
+
+@media print {
+  body {
+    font-size: 12pt;
+    color: black;
+  }
+  
+  a {
+    color: black;
+    text-decoration: underline;
+    border-bottom: none;
+  }
+  
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+  }
+  
+  img {
+    border: 2px solid black;
+  }
+  
+  h1, h2, h3 {
+    color: black;
+  }
+  
+  table {
+    page-break-inside: avoid;
+  }
+  
+  thead {
+    display: table-header-group;
+  }
+  
+  tr, img {
+    page-break-inside: avoid;
+  }
+}
+
+ul > li::marker {
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+ol > li::marker {
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+li > strong:first-child {
+  color: var(--primary-color);
+  font-size: 1.05em;
+}
+
+p > strong:not(:first-child) {
+  background-color: rgba(52, 152, 219, 0.1);
+  padding: 0.1em 0.4em;
+  border-radius: 3px;
+  font-size: 0.95em;
+}
+  </style>
 </head>
 <body>
   
